@@ -1,228 +1,289 @@
-/* --------------------------------------- */
-/* ----- Typography & Colors Setup ----- */
-/* --------------------------------------- */
-
-:root {
-    --font-stack-primary: 'Hk Grotesk', sans-serif;
-    --font-stack-secondary: 'Jost', sans-serif;
-
-    --font-size-small: 1.6rem;
-    --font-size-normal: 2.0rem;
-    --font-size-medium: 2.4rem;
-    --font-size-large: 4rem;
-    --font-size-huge: 6rem;
-
-    --color-primary: #2c3e50;
-    --color-secondary: #3498db;
-    --color-muted: #bdc3c7;
-    --color-light: #ecf0f1;
-    --color-dark: #34495e;
-    --color-bg: linear-gradient(to bottom, #f6f9fc, #ecf0f1);
-
-    --line-height-small: 1.5;
-    --line-height-normal: 1.7;
-
-    --container-max-width: 1200px;
-
-    --gutter-large: 8rem;
-    --gutter-medium: 4rem;
-    --gutter-small: 2rem;
-
-    --border-radius: 6px;
-    --transition: all 0.3s ease;
+/* Reset styling */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+/* Global body styling */
 body {
-    font-family: var(--font-stack-primary);
-    font-size: var(--font-size-normal);
-    line-height: var(--line-height-normal);
-    color: var(--color-dark);
-    background: var(--color-bg);
-    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* Light gray background */
+    color: #333; /* Dark text for contrast */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(135deg, #FDB813, #FFB81C); /* Yellow-Orange Gradient */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 3em;
     margin: 0;
 }
 
-h1, h2, h3, h4 {
-    font-family: var(--font-stack-secondary);
-    color: var(--color-primary);
-    line-height: var(--line-height-small);
+header p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
 }
 
-h1 {
-    font-size: var(--font-size-huge);
-}
-
-h2 {
-    font-size: var(--font-size-large);
-    margin-bottom: var(--gutter-small);
-}
-
-h3 {
-    font-size: var(--font-size-medium);
-    margin-bottom: var(--gutter-small);
-}
-
-p {
-    color: var(--color-muted);
-    margin-bottom: var(--gutter-small);
-}
-
-/* --------------------------------------- */
-/* ----- Section Styling ----- */
-/* --------------------------------------- */
-
-section {
-    padding: var(--gutter-large) 0;
-    text-align: center;
-    border-bottom: 1px solid var(--color-muted);
-}
-
-.section--light {
-    background: var(--color-light);
-    color: var(--color-dark);
-}
-
-.section--dark {
-    background: var(--color-dark);
-    color: var(--color-light);
-}
-
-/* --------------------------------------- */
-/* ----- Buttons and Links ----- */
-/* --------------------------------------- */
-
-a {
-    color: var(--color-secondary);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-a:hover {
-    color: var(--color-primary);
-}
-
-button {
-    padding: 1rem 3rem;
-    font-family: var(--font-stack-secondary);
-    font-size: var(--font-size-small);
-    color: var(--color-light);
-    background-color: var(--color-secondary);
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-button:hover {
-    background-color: var(--color-primary);
-}
-
-.btn--outline {
-    background: none;
-    border: 2px solid var(--color-secondary);
-    color: var(--color-secondary);
-}
-
-.btn--outline:hover {
-    background: var(--color-secondary);
-    color: var(--color-light);
-}
-
-/* --------------------------------------- */
-/* ----- Navigation Bar ----- */
-/* --------------------------------------- */
-
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--gutter-small) var(--gutter-medium);
-    background: var(--color-light);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.nav__items {
-    display: flex;
+nav ul {
     list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.nav__item:not(:last-child) {
-    margin-right: var(--gutter-small);
+nav ul li {
+    margin: 0 15px;
 }
 
-.nav__link {
-    font-size: var(--font-size-small);
-    color: var(--color-dark);
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
 }
 
-.nav__link:hover {
-    color: var(--color-secondary);
+nav ul li a:hover {
+    color: #2980b9; /* Dark Blue on hover */
 }
 
-/* --------------------------------------- */
-/* ----- Footer ----- */
-/* --------------------------------------- */
+/* Main Section Styling */
+main {
+    padding: 60px 20px;
+}
 
-.footer {
+/* Section Styling */
+section {
+    padding: 60px 20px;
+    position: relative;
+}
+
+section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 2px;
+    background-color: #ddd;
+}
+
+/* Section Content (for flex layout) */
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* About, Projects, and Contact Section Styling */
+.about,
+.projects,
+.contact {
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Project Card Styling */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.projects .project {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 1 30%;
+    min-width: 280px;
+    text-align: left;
+}
+
+.projects .project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.projects .project a {
+    text-decoration: none;
+}
+
+.projects .project a:hover {
+    text-decoration: none;
+}
+
+.projects .project i.project-icon {
+    font-size: 50px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Contact Section */
+.contact p {
+    font-size: 1.2em;
+    display: flex; /* Aligns the icon and text horizontally */
+    align-items: center; /* Vertically aligns the icon with the text */
+}
+
+.contact i {
+    font-size: 1.5em;
+    color: #3498db;
+    margin-right: 10px; /* Adds space between the icon and the text */
+}
+
+.contact a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Call-to-Action Button */
+.cta-button {
+    background: linear-gradient(135deg, #FDB813, #FFB81C);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #FFB81C, #FDB813);
+    transform: scale(1.05);
+}
+
+/* Footer Styling */
+footer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
     text-align: center;
-    padding: var(--gutter-medium) 0;
-    background: var(--color-dark);
-    color: var(--color-light);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.footer a {
-    color: var(--color-secondary);
+footer p {
+    font-size: 0.9em;
+    margin: 0;
 }
 
-.footer a:hover {
-    color: var(--color-light);
+footer a {
+    color: #FF6347; /* Tomato color for footer links */
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* --------------------------------------- */
-/* ----- Cards & Content Blocks ----- */
-/* --------------------------------------- */
-
-.card {
-    background: var(--color-light);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: var(--gutter-medium);
-    text-align: center;
+footer a:hover {
+    color: #FF4500; /* Darker Tomato color */
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+/* Button Styling */
+button {
+    font-size: 1em;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card__title {
-    font-size: var(--font-size-medium);
-    margin-bottom: var(--gutter-small);
+/* Primary Button */
+button.primary {
+    background: linear-gradient(135deg, #FDB813, #FFB81C);
+    color: white;
 }
 
-.card__text {
-    font-size: var(--font-size-small);
-    color: var(--color-muted);
+button.primary:hover {
+    background: linear-gradient(135deg, #FFB81C, #FDB813);
+    transform: scale(1.05);
 }
 
-/* --------------------------------------- */
-/* ----- Media Queries ----- */
-/* --------------------------------------- */
+/* Secondary Button */
+button.secondary {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+}
+
+button.secondary:hover {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    transform: scale(1.05);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .projects .project {
+        flex: 0 1 45%; /* 2 cards per row */
+    }
+}
 
 @media (max-width: 768px) {
-    h1 {
-        font-size: var(--font-size-large);
+    .projects .project {
+        flex: 0 1 45%; /* 2 cards per row */
     }
 
-    h2 {
-        font-size: var(--font-size-medium);
-    }
-
-    .nav {
+    nav ul {
         flex-direction: column;
+        padding: 0;
     }
 
-    .nav__items {
-        flex-direction: column;
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%; /* Full-width buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .projects .project {
+        flex: 0 1 100%; /* 1 card per row */
+    }
+
+    button {
+        width: 100%;
+        font-size: 1.2em;
     }
 }
