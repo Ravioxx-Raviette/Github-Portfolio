@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -24,16 +23,17 @@ body::before {
     z-index: -1; /* Places overlay behind content */
 }
 
-/* Header */
+/* Header - Static */
 header {
     background: linear-gradient(135deg, #1f1f1f, #333333); /* Subtle dark gradient */
     color: #e0e0e0;
     padding: 60px 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Deeper shadow for more depth */
-    position: static; /* Default behavior */
+    position: static; /* Static positioning (normal flow) */
     z-index: 1;
 }
 
+/* Container for the header content */
 header .container {
     display: flex;
     flex-direction: column;
@@ -87,9 +87,6 @@ nav ul li a:hover {
     color: #64ffda; /* Accent color for hover */
     transform: scale(1.05); /* Slight scale on hover */
 }
-
-/* Other sections remain the same */
-
 
 /* Sections */
 section {
